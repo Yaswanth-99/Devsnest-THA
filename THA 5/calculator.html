@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  <style>
+    body{
+      text-align: center;
+    }
+  </style>
+  </head>
+  <body>
+    <h1>Calculator</h1>
+    <form onsubmit="return false;">
+      <label for="op1">Enter First Number:</label><br />
+      <input type="text" id="fir" /><br />
+      <label for="op2">Enter Second Number:</label><br />
+      <input type="text" id="sec" />
+      <p>Choose an operation</p>
+      <button style="margin-right: 16px;" onclick="opn('+')">Add</button>
+      <button style="margin-right: 16px;" onclick="opn('-')">Sub</button>
+      <button style="margin-right: 16px;" onclick="opn('*')">mul</button>
+      <button style="margin-right: 16px;" onclick="opn('/')">div</button>
+      <button style="margin-right: 16px;" onclick="opn('%')">mod</button>
+    </form>
+    <p>Result</p>
+    <input type="text" id="result" />
+
+    <script>
+      document.getElementById("result").innerHTML = ans;
+      function opn(s) {
+        var n1 = parseFloat(document.getElementById("fir").value);
+        var n2 = parseFloat(document.getElementById("sec").value);
+        var ans;
+        var s;
+        switch (s) {
+          case "+":
+            ans = n1 + n2;
+            break; 
+
+          case "-":
+            ans = n1 - n2;
+            break; 
+
+          case "*":
+            ans = n1 * n2;
+            break; 
+
+          case "/":
+            ans = n1 / n2;
+            break; 
+
+          case "%":
+            ans = n1 % n2;
+            break; 
+
+          default:
+            break;
+        }
+        document.getElementById("result").value = ans;
+      }
+    </script>
+  </body>
+</html>
